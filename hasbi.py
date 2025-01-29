@@ -11,15 +11,24 @@ def main():
     st.title('Diabetes Prediction Web App')
     st.write('Masukkan data pasien untuk memprediksi apakah mereka memiliki diabetes atau tidak.')
 
+    col1, col2 = st.columns(2)
     # Input data dari pengguna
-    Pregnancies = st.number_input('Number of Pregnancies', min_value=0, step=1, value=0)
-    Glucose = st.number_input('Glucose Level', min_value=0, step=1, value=0)
-    BloodPressure = st.number_input('Blood Pressure Level', min_value=0, step=1, value=0)
-    SkinThickness = st.number_input('Skin Thickness Value', min_value=0, step=1, value=0)
-    Insulin = st.number_input('Insulin Level', min_value=0, step=1, value=0)
-    BMI = st.number_input('BMI Value', min_value=0.0, step=0.1, value=0.0)
-    DiabetesPedigreeFunction = st.number_input('Diabetes Pedigree Function', min_value=0.0, step=0.001, value=0.0)
-    Age = st.number_input('Age of the Person', min_value=0, step=1, value=0)
+    with col1:
+        Pregnancies = st.number_input('Number of Pregnancies', min_value=0, step=1, value=0)
+    with col2:
+        Glucose = st.number_input('Glucose Level', min_value=0, step=1, value=0)
+    with col1:
+        BloodPressure = st.number_input('Blood Pressure Level', min_value=0, step=1, value=0)
+    with col2:
+        SkinThickness = st.number_input('Skin Thickness Value', min_value=0, step=1, value=0)
+    with col1:
+        Insulin = st.number_input('Insulin Level', min_value=0, step=1, value=0)
+    with col2:
+        BMI = st.number_input('BMI Value', min_value=0.0, step=0.1, value=0.0)
+    with col1:
+        DiabetesPedigreeFunction = st.number_input('Diabetes Pedigree Function', min_value=0.0, step=0.001, value=0.0)
+    with col2:
+        Age = st.number_input('Age of the Person', min_value=0, step=1, value=0)
 
     # Tombol untuk melakukan prediksi
     if st.button('Predict Diabetes'):
